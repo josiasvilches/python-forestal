@@ -86,7 +86,16 @@ python main.py
 PythonForestal/
 ├── main.py                          # Punto de entrada
 ├── README.md                        # Este archivo
+├── RUBRICA_AUTOMATIZADA.md          # Verificaciones automáticas (n8n)
+├── RUBRICA_EVALUACION.md            # Criterios de evaluación
+├── USER_STORIES.md                  # Historias de usuario
 ├── data/                            # Datos persistidos (.dat)
+├── tests/                           # Pruebas unitarias y de integración
+│   ├── test_factory.py
+│   ├── test_observer.py
+│   ├── test_singleton.py
+│   ├── test_strategy.py
+│   └── test_system.py
 └── python_forestacion/
     ├── constantes.py                # Constantes centralizadas
     ├── entidades/                   # DTOs (solo datos)
