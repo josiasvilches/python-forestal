@@ -17,9 +17,7 @@ from python_forestacion.servicios.personal.trabajador_service import TrabajadorS
 from python_forestacion.servicios.negocio.fincas_service import FincasService
 from python_forestacion.servicios.cultivos.cultivo_service_registry import CultivoServiceRegistry
 from python_forestacion.entidades.terrenos.registro_forestal import RegistroForestal
-from python_forestacion.entidades.personal.trabajador import Trabajador
 from python_forestacion.entidades.personal.tarea import Tarea
-from python_forestacion.entidades.personal.herramienta import Herramienta
 from python_forestacion.entidades.cultivos.lechuga import Lechuga
 from python_forestacion.entidades.cultivos.pino import Pino
 from python_forestacion.riego.sensores.temperatura_reader_task import TemperaturaReaderTask
@@ -171,16 +169,28 @@ def main():
         Tarea(3, date.today(), "Marcar surcos")
     ]
     
-    # Crear trabajador
-    trabajador = Trabajador(
+    # PATRON FACTORY: Crear trabajador usando Factory Method
+    print("\nCreando trabajador y herramienta usando Factory Method:")
+    from python_forestacion.patrones.factory.cultivo_factory import CultivoFactory
+    
+    trabajador = CultivoFactory.crear_trabajador(
         dni=43888734,
         nombre="Juan Perez",
         tareas=tareas
     )
+    print(f"Trabajador creado: {trabajador.get_nombre()} (DNI: {trabajador.get_dni()})")
+    
+    # Crear herramienta usando Factory Method
+    herramienta = CultivoFactory.crear_herramienta(
+        id_herramienta=1,
+        nombre="Pala",
+        certificado_hys=True
+    )
+    print(f"Herramienta creada: {herramienta.get_nombre()} (Certificado H&S: {herramienta.tiene_certificado_hys()})")
     
     # Asignar trabajadores a plantacion
     plantacion.set_trabajadores([trabajador])
-    print(f"Trabajador {trabajador.get_nombre()} asignado a plantacion")
+    print(f"\nTrabajador {trabajador.get_nombre()} asignado a plantacion")
     
     # Asignar apto medico
     trabajador_service = TrabajadorService()
@@ -193,12 +203,6 @@ def main():
     
     # Ejecutar tareas
     print("\nEjecutando tareas del dia:")
-    herramienta = Herramienta(
-        id_herramienta=1,
-        nombre="Pala",
-        certificado_hys=True
-    )
-    
     trabajador_service.trabajar(
         trabajador=trabajador,
         fecha=date.today(),
@@ -243,7 +247,7 @@ def main():
     # ========================================================================
     imprimir_separador("EJEMPLO COMPLETADO EXITOSAMENTE")
     print("  [OK] SINGLETON   - CultivoServiceRegistry (instancia unica)")
-    print("  [OK] FACTORY     - Creacion de cultivos")
+    print("  [OK] FACTORY     - Creacion de cultivos, trabajadores y herramientas")
     print("  [OK] OBSERVER    - Sistema de sensores y eventos")
     print("  [OK] STRATEGY    - Algoritmos de absorcion de agua")
     imprimir_separador()

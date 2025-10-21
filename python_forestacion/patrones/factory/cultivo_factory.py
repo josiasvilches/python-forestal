@@ -5,10 +5,14 @@ Centraliza la creacion de cultivos sin exponer clases concretas al cliente.
 """
 
 # Standard library
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, List
+from datetime import date
 
 if TYPE_CHECKING:
     from python_forestacion.entidades.cultivos.cultivo import Cultivo
+    from python_forestacion.entidades.personal.trabajador import Trabajador
+    from python_forestacion.entidades.personal.herramienta import Herramienta
+    from python_forestacion.entidades.personal.tarea import Tarea
 
 
 class CultivoFactory:
@@ -91,3 +95,51 @@ class CultivoFactory:
         """
         from python_forestacion.entidades.cultivos.zanahoria import Zanahoria
         return Zanahoria(is_baby_carrot=False)
+
+    @staticmethod
+    def crear_trabajador(dni: int, nombre: str, tareas: List['Tarea']) -> 'Trabajador':
+        """
+        Crea un trabajador con sus tareas asignadas.
+
+        Args:
+            dni: DNI del trabajador
+            nombre: Nombre completo del trabajador
+            tareas: Lista de tareas asignadas
+
+        Returns:
+            Trabajador creado con las tareas asignadas
+
+        Raises:
+            ValueError: Si el DNI es negativo o el nombre esta vacio
+        """
+        if dni <= 0:
+            raise ValueError("El DNI debe ser un numero positivo")
+        if not nombre or nombre.strip() == "":
+            raise ValueError("El nombre del trabajador no puede estar vacio")
+
+        from python_forestacion.entidades.personal.trabajador import Trabajador
+        return Trabajador(dni=dni, nombre=nombre, tareas=tareas)
+
+    @staticmethod
+    def crear_herramienta(id_herramienta: int, nombre: str, certificado_hys: bool = True) -> 'Herramienta':
+        """
+        Crea una herramienta de trabajo.
+
+        Args:
+            id_herramienta: ID unico de la herramienta
+            nombre: Nombre de la herramienta
+            certificado_hys: True si tiene certificado de higiene y seguridad
+
+        Returns:
+            Herramienta creada con los parametros especificados
+
+        Raises:
+            ValueError: Si el ID es negativo o el nombre esta vacio
+        """
+        if id_herramienta <= 0:
+            raise ValueError("El ID de herramienta debe ser un numero positivo")
+        if not nombre or nombre.strip() == "":
+            raise ValueError("El nombre de la herramienta no puede estar vacio")
+
+        from python_forestacion.entidades.personal.herramienta import Herramienta
+        return Herramienta(id_herramienta=id_herramienta, nombre=nombre, certificado_hys=certificado_hys)

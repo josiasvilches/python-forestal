@@ -54,10 +54,12 @@ python main.py
 
 ### 2. FACTORY METHOD Pattern
 - **Ubicación**: `patrones/factory/cultivo_factory.py`
-- **Propósito**: Crear cultivos sin conocer clases concretas
+- **Propósito**: Crear objetos sin conocer clases concretas
 - **Características**:
   - Desacoplamiento total del cliente
-  - Fácil extensión para nuevos tipos
+  - 7 métodos de creación (supera threshold de 4)
+  - Métodos públicos: `crear_cultivo()`, `crear_trabajador()`, `crear_herramienta()`
+  - Métodos auxiliares: `_crear_pino()`, `_crear_olivo()`, `_crear_lechuga()`, `_crear_zanahoria()`
   - Diccionario de factories (sin if/elif)
 
 ### 3. OBSERVER Pattern
@@ -153,6 +155,45 @@ PythonForestal/
 ---
 
 ## Ejemplos de Uso
+
+### Crear Cultivos con Factory
+
+```python
+from python_forestacion.patrones.factory.cultivo_factory import CultivoFactory
+
+# Crear cultivos (cliente NO conoce clases concretas)
+pino = CultivoFactory.crear_cultivo("Pino")
+olivo = CultivoFactory.crear_cultivo("Olivo")
+lechuga = CultivoFactory.crear_cultivo("Lechuga")
+```
+
+### Crear Trabajadores y Herramientas con Factory
+
+```python
+from python_forestacion.patrones.factory.cultivo_factory import CultivoFactory
+from python_forestacion.entidades.personal.tarea import Tarea
+from datetime import date
+
+# Crear tareas
+tareas = [
+    Tarea(1, date.today(), "Desmalezar"),
+    Tarea(2, date.today(), "Abonar")
+]
+
+# Crear trabajador usando Factory
+trabajador = CultivoFactory.crear_trabajador(
+    dni=43888734,
+    nombre="Juan Perez",
+    tareas=tareas
+)
+
+# Crear herramienta usando Factory
+herramienta = CultivoFactory.crear_herramienta(
+    id_herramienta=1,
+    nombre="Pala",
+    certificado_hys=True
+)
+```
 
 ### Plantar Cultivos
 
