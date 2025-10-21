@@ -19,7 +19,7 @@ Sistema integral de gestión forestal y agrícola que demuestra la implementaci�
 
 ```bash
 # Clonar o descargar el proyecto
-cd PythonForestal
+cd python-forestal
 
 # NO es necesario instalar dependencias externas
 # El proyecto usa solo la biblioteca estándar de Python
