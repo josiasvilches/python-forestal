@@ -1,20 +1,20 @@
 """
 Archivo integrador generado automaticamente
-Directorio: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\patrones\strategy\impl
-Fecha: 2025-10-21 18:36:35
+Directorio: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/patrones/strategy/impl
+Fecha: 2025-10-22 09:43:42
 Total de archivos integrados: 3
 """
 
 # ================================================================================
 # ARCHIVO 1/3: __init__.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\patrones\strategy\impl\__init__.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/patrones/strategy/impl/__init__.py
 # ================================================================================
 
 
 
 # ================================================================================
 # ARCHIVO 2/3: absorcion_constante_strategy.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\patrones\strategy\impl\absorcion_constante_strategy.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/patrones/strategy/impl/absorcion_constante_strategy.py
 # ================================================================================
 
 """
@@ -74,7 +74,7 @@ class AbsorcionConstanteStrategy(AbsorcionAguaStrategy):
 
 # ================================================================================
 # ARCHIVO 3/3: absorcion_seasonal_strategy.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\patrones\strategy\impl\absorcion_seasonal_strategy.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/patrones/strategy/impl/absorcion_seasonal_strategy.py
 # ================================================================================
 
 """

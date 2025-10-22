@@ -1,8 +1,8 @@
 """
 INTEGRADOR FINAL - CONSOLIDACION COMPLETA DEL PROYECTO
 ============================================================================
-Directorio raiz: C:\Josias\UM\3ro\DisenoSistemas\Parcial
-Fecha de generacion: 2025-10-21 18:36:36
+Directorio raiz: /home/josiasvilches/cursada/disenosistemas/python-forestal
+Fecha de generacion: 2025-10-22 09:43:42
 Total de archivos integrados: 75
 Total de directorios procesados: 23
 ============================================================================
@@ -14,17 +14,17 @@ Total de directorios procesados: 23
 
 # DIRECTORIO: .
 #   1. buscar_paquete.py
-#   2. main.py
-#   3. verificarproec.py
+#   2. evaluador.py
+#   3. main.py
 #
 # DIRECTORIO: python_forestacion
 #   4. __init__.py
 #   5. constantes.py
 #
-# DIRECTORIO: python_forestacion\entidades
+# DIRECTORIO: python_forestacion/entidades
 #   6. __init__.py
 #
-# DIRECTORIO: python_forestacion\entidades\cultivos
+# DIRECTORIO: python_forestacion/entidades/cultivos
 #   7. __init__.py
 #   8. arbol.py
 #   9. cultivo.py
@@ -35,20 +35,20 @@ Total de directorios procesados: 23
 #   14. tipo_aceituna.py
 #   15. zanahoria.py
 #
-# DIRECTORIO: python_forestacion\entidades\personal
+# DIRECTORIO: python_forestacion/entidades/personal
 #   16. __init__.py
 #   17. apto_medico.py
 #   18. herramienta.py
 #   19. tarea.py
 #   20. trabajador.py
 #
-# DIRECTORIO: python_forestacion\entidades\terrenos
+# DIRECTORIO: python_forestacion/entidades/terrenos
 #   21. __init__.py
 #   22. plantacion.py
 #   23. registro_forestal.py
 #   24. tierra.py
 #
-# DIRECTORIO: python_forestacion\excepciones
+# DIRECTORIO: python_forestacion/excepciones
 #   25. __init__.py
 #   26. agua_agotada_exception.py
 #   27. forestacion_exception.py
@@ -56,51 +56,51 @@ Total de directorios procesados: 23
 #   29. persistencia_exception.py
 #   30. superficie_insuficiente_exception.py
 #
-# DIRECTORIO: python_forestacion\patrones
+# DIRECTORIO: python_forestacion/patrones
 #   31. __init__.py
 #
-# DIRECTORIO: python_forestacion\patrones\factory
+# DIRECTORIO: python_forestacion/patrones/factory
 #   32. __init__.py
 #   33. cultivo_factory.py
 #
-# DIRECTORIO: python_forestacion\patrones\observer
+# DIRECTORIO: python_forestacion/patrones/observer
 #   34. __init__.py
 #   35. observable.py
 #   36. observer.py
 #
-# DIRECTORIO: python_forestacion\patrones\observer\eventos
+# DIRECTORIO: python_forestacion/patrones/observer/eventos
 #   37. __init__.py
 #   38. evento_plantacion.py
 #   39. evento_sensor.py
 #
-# DIRECTORIO: python_forestacion\patrones\singleton
+# DIRECTORIO: python_forestacion/patrones/singleton
 #   40. __init__.py
 #
-# DIRECTORIO: python_forestacion\patrones\strategy
+# DIRECTORIO: python_forestacion/patrones/strategy
 #   41. __init__.py
 #   42. absorcion_agua_strategy.py
 #
-# DIRECTORIO: python_forestacion\patrones\strategy\impl
+# DIRECTORIO: python_forestacion/patrones/strategy/impl
 #   43. __init__.py
 #   44. absorcion_constante_strategy.py
 #   45. absorcion_seasonal_strategy.py
 #
-# DIRECTORIO: python_forestacion\riego
+# DIRECTORIO: python_forestacion/riego
 #   46. __init__.py
 #
-# DIRECTORIO: python_forestacion\riego\control
+# DIRECTORIO: python_forestacion/riego/control
 #   47. __init__.py
 #   48. control_riego_task.py
 #
-# DIRECTORIO: python_forestacion\riego\sensores
+# DIRECTORIO: python_forestacion/riego/sensores
 #   49. __init__.py
 #   50. humedad_reader_task.py
 #   51. temperatura_reader_task.py
 #
-# DIRECTORIO: python_forestacion\servicios
+# DIRECTORIO: python_forestacion/servicios
 #   52. __init__.py
 #
-# DIRECTORIO: python_forestacion\servicios\cultivos
+# DIRECTORIO: python_forestacion/servicios/cultivos
 #   53. __init__.py
 #   54. arbol_service.py
 #   55. cultivo_service.py
@@ -110,16 +110,16 @@ Total de directorios procesados: 23
 #   59. pino_service.py
 #   60. zanahoria_service.py
 #
-# DIRECTORIO: python_forestacion\servicios\negocio
+# DIRECTORIO: python_forestacion/servicios/negocio
 #   61. __init__.py
 #   62. fincas_service.py
 #   63. paquete.py
 #
-# DIRECTORIO: python_forestacion\servicios\personal
+# DIRECTORIO: python_forestacion/servicios/personal
 #   64. __init__.py
 #   65. trabajador_service.py
 #
-# DIRECTORIO: python_forestacion\servicios\terrenos
+# DIRECTORIO: python_forestacion/servicios/terrenos
 #   66. __init__.py
 #   67. plantacion_service.py
 #   68. registro_forestal_service.py
@@ -143,7 +143,7 @@ Total de directorios procesados: 23
 # ==============================================================================
 # ARCHIVO 1/75: buscar_paquete.py
 # Directorio: .
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\buscar_paquete.py
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/buscar_paquete.py
 # ==============================================================================
 
 """
@@ -560,9 +560,188 @@ if __name__ == "__main__":
     sys.exit(main())
 
 # ==============================================================================
-# ARCHIVO 2/75: main.py
+# ARCHIVO 2/75: evaluador.py
 # Directorio: .
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\main.py
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/evaluador.py
+# ==============================================================================
+
+#!/usr/bin/env python3
+"""
+Script helper para evaluacion automatizada.
+Uso: python evaluador_automatico.py --proyecto /path/to/proyecto --config config.json
+"""
+
+import json
+import subprocess
+import sys
+from pathlib import Path
+from typing import Dict, List, Any
+
+class EvaluadorAutomatico:
+    def __init__(self, proyecto_path: str, config_path: str):
+        self.proyecto_path = Path(proyecto_path)
+        self.config = self._cargar_config(config_path)
+        self.resultados = []
+
+    def _cargar_config(self, config_path: str) -> Dict:
+        with open(config_path, 'r') as f:
+            return json.load(f)
+
+    def ejecutar_comando(self, comando: str) -> Dict[str, Any]:
+        """Ejecuta comando y retorna resultado."""
+        try:
+            resultado = subprocess.run(
+                comando,
+                shell=True,
+                cwd=self.proyecto_path,
+                capture_output=True,
+                text=True,
+                timeout=30
+            )
+            return {
+                'exitcode': resultado.returncode,
+                'stdout': resultado.stdout,
+                'stderr': resultado.stderr,
+                'exito': resultado.returncode == 0
+            }
+        except subprocess.TimeoutExpired:
+            return {
+                'exitcode': -1,
+                'stdout': '',
+                'stderr': 'Timeout',
+                'exito': False
+            }
+
+    def evaluar_criterio(self, criterio: Dict) -> Dict:
+        """Evalua un criterio individual."""
+        resultado_cmd = self.ejecutar_comando(criterio['comando'])
+
+        # Contar coincidencias
+        coincidencias = resultado_cmd['stdout'].count('\n')
+
+        # Evaluar segun threshold
+        inverted = criterio.get('inverted', False)
+        if inverted:
+            pasado = coincidencias <= criterio['threshold']
+        else:
+            pasado = coincidencias >= criterio['threshold']
+
+        return {
+            'id': criterio['id'],
+            'categoria': criterio['categoria'],
+            'pasado': pasado,
+            'coincidencias': coincidencias,
+            'threshold': criterio['threshold'],
+            'puntaje_max': criterio['puntaje'],
+            'puntaje_obtenido': criterio['puntaje'] if pasado else 0,
+            'peso': criterio['peso'],
+            'output': resultado_cmd['stdout'][:500]  # Primeros 500 chars
+        }
+
+    def evaluar_todos(self) -> Dict:
+        """Evalua todos los criterios."""
+        for criterio in self.config['evaluacion']['criterios']:
+            resultado = self.evaluar_criterio(criterio)
+            self.resultados.append(resultado)
+
+        # Calcular totales
+        puntaje_total = sum(r['puntaje_obtenido'] for r in self.resultados)
+        puntaje_maximo = self.config['evaluacion']['puntaje_maximo']
+        porcentaje = (puntaje_total / puntaje_maximo) * 100
+
+        # Determinar calificacion
+        if porcentaje >= 90:
+            calificacion = 'Excelente'
+        elif porcentaje >= 80:
+            calificacion = 'Muy Bueno'
+        elif porcentaje >= 70:
+            calificacion = 'Bueno'
+        elif porcentaje >= 60:
+            calificacion = 'Suficiente'
+        else:
+            calificacion = 'Insuficiente'
+
+        return {
+            'puntaje_total': puntaje_total,
+            'puntaje_maximo': puntaje_maximo,
+            'porcentaje': round(porcentaje, 2),
+            'calificacion': calificacion,
+            'aprobado': porcentaje >= 70,
+            'criterios_pasados': sum(1 for r in self.resultados if r['pasado']),
+            'criterios_fallados': sum(1 for r in self.resultados if not r['pasado']),
+            'resultados': self.resultados
+        }
+
+    def generar_reporte_json(self, output_path: str):
+        """Genera reporte en formato JSON."""
+        resumen = self.evaluar_todos()
+        with open(output_path, 'w') as f:
+            json.dump(resumen, f, indent=2)
+
+    def generar_reporte_markdown(self, output_path: str):
+        """Genera reporte en formato Markdown."""
+        resumen = self.evaluar_todos()
+
+        markdown = f"""# Reporte de Evaluacion Automatizada
+
+**Proyecto**: {self.proyecto_path.name}
+**Fecha**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+
+## Resumen
+
+- **Puntaje Total**: {resumen['puntaje_total']}/{resumen['puntaje_maximo']}
+- **Porcentaje**: {resumen['porcentaje']}%
+- **Calificacion**: {resumen['calificacion']}
+- **Estado**: {'APROBADO' if resumen['aprobado'] else 'NO APROBADO'}
+
+## Detalles
+
+| Criterio | Categoria | Pasado | Puntaje | Peso |
+|----------|-----------|--------|---------|------|
+"""
+        for r in self.resultados:
+            estado = '✓' if r['pasado'] else '✗'
+            markdown += f"| {r['id']} | {r['categoria']} | {estado} | {r['puntaje_obtenido']}/{r['puntaje_max']} | {r['peso']} |\n"
+
+        with open(output_path, 'w') as f:
+            f.write(markdown)
+
+
+if __name__ == '__main__':
+    import argparse
+    from datetime import datetime
+
+    parser = argparse.ArgumentParser(description='Evaluador automatico de proyectos')
+    parser.add_argument('--proyecto', required=True, help='Path al proyecto')
+    parser.add_argument('--config', required=True, help='Path al archivo de configuracion')
+    parser.add_argument('--output-json', help='Path para reporte JSON')
+    parser.add_argument('--output-md', help='Path para reporte Markdown')
+
+    args = parser.parse_args()
+
+    evaluador = EvaluadorAutomatico(args.proyecto, args.config)
+
+    if args.output_json:
+        evaluador.generar_reporte_json(args.output_json)
+        print(f"Reporte JSON generado: {args.output_json}")
+
+    if args.output_md:
+        evaluador.generar_reporte_markdown(args.output_md)
+        print(f"Reporte Markdown generado: {args.output_md}")
+
+    # Imprimir resumen en consola
+    resumen = evaluador.evaluar_todos()
+    print(f"\n=== RESUMEN ===")
+    print(f"Puntaje: {resumen['puntaje_total']}/{resumen['puntaje_maximo']} ({resumen['porcentaje']}%)")
+    print(f"Calificacion: {resumen['calificacion']}")
+    print(f"Estado: {'APROBADO' if resumen['aprobado'] else 'NO APROBADO'}")
+
+    sys.exit(0 if resumen['aprobado'] else 1)
+
+# ==============================================================================
+# ARCHIVO 3/75: main.py
+# Directorio: .
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/main.py
 # ==============================================================================
 
 """
@@ -823,245 +1002,6 @@ def main():
 if __name__ == "__main__":
     main()
 
-# ==============================================================================
-# ARCHIVO 3/75: verificarproec.py
-# Directorio: .
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\verificarproec.py
-# ==============================================================================
-
-"""
-Script de verificacion del proyecto PythonForestal.
-
-Verifica que todos los archivos esten presentes y sean importables.
-"""
-
-import os
-import sys
-
-
-def verificar_estructura():
-    """
-    Verifica la estructura de directorios del proyecto.
-    
-    Returns:
-        True si la estructura es correcta
-    """
-    print("=" * 70)
-    print("VERIFICANDO ESTRUCTURA DEL PROYECTO")
-    print("=" * 70)
-    
-    directorios_requeridos = [
-        "python_forestacion",
-        "python_forestacion/entidades",
-        "python_forestacion/entidades/cultivos",
-        "python_forestacion/entidades/terrenos",
-        "python_forestacion/entidades/personal",
-        "python_forestacion/servicios",
-        "python_forestacion/servicios/cultivos",
-        "python_forestacion/servicios/terrenos",
-        "python_forestacion/servicios/personal",
-        "python_forestacion/servicios/negocio",
-        "python_forestacion/patrones",
-        "python_forestacion/patrones/factory",
-        "python_forestacion/patrones/observer",
-        "python_forestacion/patrones/strategy",
-        "python_forestacion/patrones/strategy/impl",
-        "python_forestacion/riego",
-        "python_forestacion/riego/sensores",
-        "python_forestacion/riego/control",
-        "python_forestacion/excepciones"
-    ]
-    
-    archivos_requeridos = [
-        "main.py",
-        "README.md",
-        "python_forestacion/constantes.py",
-        "python_forestacion/entidades/cultivos/cultivo.py",
-        "python_forestacion/entidades/cultivos/pino.py",
-        "python_forestacion/entidades/cultivos/olivo.py",
-        "python_forestacion/entidades/cultivos/lechuga.py",
-        "python_forestacion/entidades/cultivos/zanahoria.py",
-        "python_forestacion/patrones/factory/cultivo_factory.py",
-        "python_forestacion/patrones/observer/observable.py",
-        "python_forestacion/patrones/observer/observer.py",
-        "python_forestacion/patrones/strategy/absorcion_agua_strategy.py",
-        "python_forestacion/servicios/cultivos/cultivo_service_registry.py"
-    ]
-    
-    errores = 0
-    
-    print("\nVerificando directorios...")
-    for directorio in directorios_requeridos:
-        if os.path.isdir(directorio):
-            print(f"  [OK] {directorio}")
-        else:
-            print(f"  [FALTA] {directorio}")
-            errores += 1
-    
-    print("\nVerificando archivos clave...")
-    for archivo in archivos_requeridos:
-        if os.path.isfile(archivo):
-            print(f"  [OK] {archivo}")
-        else:
-            print(f"  [FALTA] {archivo}")
-            errores += 1
-    
-    if errores == 0:
-        print("\n[EXITO] Estructura del proyecto correcta")
-        return True
-    else:
-        print(f"\n[ERROR] Faltan {errores} elementos")
-        return False
-
-
-def verificar_imports():
-    """
-    Verifica que los modulos principales sean importables.
-    
-    Returns:
-        True si todos los imports funcionan
-    """
-    print("\n" + "=" * 70)
-    print("VERIFICANDO IMPORTS")
-    print("=" * 70)
-    
-    modulos_a_verificar = [
-        "python_forestacion.constantes",
-        "python_forestacion.entidades.cultivos.pino",
-        "python_forestacion.entidades.cultivos.olivo",
-        "python_forestacion.entidades.cultivos.lechuga",
-        "python_forestacion.entidades.cultivos.zanahoria",
-        "python_forestacion.patrones.factory.cultivo_factory",
-        "python_forestacion.patrones.observer.observable",
-        "python_forestacion.patrones.observer.observer",
-        "python_forestacion.patrones.strategy.absorcion_agua_strategy",
-        "python_forestacion.servicios.cultivos.cultivo_service_registry",
-        "python_forestacion.servicios.terrenos.plantacion_service",
-        "python_forestacion.riego.sensores.temperatura_reader_task",
-        "python_forestacion.riego.control.control_riego_task"
-    ]
-    
-    errores = 0
-    
-    for modulo in modulos_a_verificar:
-        try:
-            __import__(modulo)
-            print(f"  [OK] {modulo}")
-        except Exception as e:
-            print(f"  [ERROR] {modulo}: {str(e)}")
-            errores += 1
-    
-    if errores == 0:
-        print("\n[EXITO] Todos los imports funcionan correctamente")
-        return True
-    else:
-        print(f"\n[ERROR] {errores} imports fallidos")
-        return False
-
-
-def verificar_patrones():
-    """
-    Verifica que los patrones esten implementados.
-    
-    Returns:
-        True si los patrones estan presentes
-    """
-    print("\n" + "=" * 70)
-    print("VERIFICANDO PATRONES DE DISENO")
-    print("=" * 70)
-    
-    errores = 0
-    
-    # Singleton
-    print("\n[1] SINGLETON Pattern:")
-    try:
-        from python_forestacion.servicios.cultivos.cultivo_service_registry import CultivoServiceRegistry
-        registry1 = CultivoServiceRegistry()
-        registry2 = CultivoServiceRegistry.get_instance()
-        if registry1 is registry2:
-            print("  [OK] Singleton implementado correctamente")
-        else:
-            print("  [ERROR] Singleton no retorna misma instancia")
-            errores += 1
-    except Exception as e:
-        print(f"  [ERROR] {str(e)}")
-        errores += 1
-    
-    # Factory
-    print("\n[2] FACTORY METHOD Pattern:")
-    try:
-        from python_forestacion.patrones.factory.cultivo_factory import CultivoFactory
-        cultivo = CultivoFactory.crear_cultivo("Pino")
-        print(f"  [OK] Factory crea cultivos: {type(cultivo).__name__}")
-    except Exception as e:
-        print(f"  [ERROR] {str(e)}")
-        errores += 1
-    
-    # Observer
-    print("\n[3] OBSERVER Pattern:")
-    try:
-        from python_forestacion.patrones.observer.observable import Observable
-        from python_forestacion.patrones.observer.observer import Observer
-        print("  [OK] Observable y Observer definidos")
-    except Exception as e:
-        print(f"  [ERROR] {str(e)}")
-        errores += 1
-    
-    # Strategy
-    print("\n[4] STRATEGY Pattern:")
-    try:
-        from python_forestacion.patrones.strategy.absorcion_agua_strategy import AbsorcionAguaStrategy
-        from python_forestacion.patrones.strategy.impl.absorcion_seasonal_strategy import AbsorcionSeasonalStrategy
-        from python_forestacion.patrones.strategy.impl.absorcion_constante_strategy import AbsorcionConstanteStrategy
-        print("  [OK] Estrategias implementadas")
-    except Exception as e:
-        print(f"  [ERROR] {str(e)}")
-        errores += 1
-    
-    if errores == 0:
-        print("\n[EXITO] Todos los patrones implementados correctamente")
-        return True
-    else:
-        print(f"\n[ERROR] {errores} patrones con problemas")
-        return False
-
-
-def main():
-    """
-    Ejecuta todas las verificaciones.
-    """
-    print("\n")
-    print("#" * 70)
-    print("  VERIFICADOR DE PROYECTO - PythonForestal")
-    print("#" * 70)
-    
-    resultado_estructura = verificar_estructura()
-    resultado_imports = verificar_imports()
-    resultado_patrones = verificar_patrones()
-    
-    print("\n" + "=" * 70)
-    print("RESUMEN")
-    print("=" * 70)
-    print(f"Estructura:  {'OK' if resultado_estructura else 'ERROR'}")
-    print(f"Imports:     {'OK' if resultado_imports else 'ERROR'}")
-    print(f"Patrones:    {'OK' if resultado_patrones else 'ERROR'}")
-    
-    if resultado_estructura and resultado_imports and resultado_patrones:
-        print("\n" + "=" * 70)
-        print("  [EXITO TOTAL] Proyecto listo para ejecutar")
-        print("  Ejecuta: python main.py")
-        print("=" * 70)
-        return 0
-    else:
-        print("\n" + "=" * 70)
-        print("  [ADVERTENCIA] Corrige los errores antes de ejecutar")
-        print("=" * 70)
-        return 1
-
-
-if __name__ == "__main__":
-    sys.exit(main())
-
 
 ################################################################################
 # DIRECTORIO: python_forestacion
@@ -1070,7 +1010,7 @@ if __name__ == "__main__":
 # ==============================================================================
 # ARCHIVO 4/75: __init__.py
 # Directorio: python_forestacion
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\__init__.py
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/__init__.py
 # ==============================================================================
 
 
@@ -1078,7 +1018,7 @@ if __name__ == "__main__":
 # ==============================================================================
 # ARCHIVO 5/75: constantes.py
 # Directorio: python_forestacion
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\constantes.py
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/constantes.py
 # ==============================================================================
 
 """
@@ -1174,34 +1114,34 @@ SUPERFICIE_MINIMA_TERRENO = 0.01  # metros cuadrados
 
 
 ################################################################################
-# DIRECTORIO: python_forestacion\entidades
+# DIRECTORIO: python_forestacion/entidades
 ################################################################################
 
 # ==============================================================================
 # ARCHIVO 6/75: __init__.py
-# Directorio: python_forestacion\entidades
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\__init__.py
+# Directorio: python_forestacion/entidades
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/__init__.py
 # ==============================================================================
 
 
 
 
 ################################################################################
-# DIRECTORIO: python_forestacion\entidades\cultivos
+# DIRECTORIO: python_forestacion/entidades/cultivos
 ################################################################################
 
 # ==============================================================================
 # ARCHIVO 7/75: __init__.py
-# Directorio: python_forestacion\entidades\cultivos
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\cultivos\__init__.py
+# Directorio: python_forestacion/entidades/cultivos
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/cultivos/__init__.py
 # ==============================================================================
 
 
 
 # ==============================================================================
 # ARCHIVO 8/75: arbol.py
-# Directorio: python_forestacion\entidades\cultivos
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\cultivos\arbol.py
+# Directorio: python_forestacion/entidades/cultivos
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/cultivos/arbol.py
 # ==============================================================================
 
 """
@@ -1256,8 +1196,8 @@ class Arbol(Cultivo, ABC):
 
 # ==============================================================================
 # ARCHIVO 9/75: cultivo.py
-# Directorio: python_forestacion\entidades\cultivos
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\cultivos\cultivo.py
+# Directorio: python_forestacion/entidades/cultivos
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/cultivos/cultivo.py
 # ==============================================================================
 
 """
@@ -1340,8 +1280,8 @@ class Cultivo(ABC):
 
 # ==============================================================================
 # ARCHIVO 10/75: hortaliza.py
-# Directorio: python_forestacion\entidades\cultivos
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\cultivos\hortaliza.py
+# Directorio: python_forestacion/entidades/cultivos
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/cultivos/hortaliza.py
 # ==============================================================================
 
 """
@@ -1396,8 +1336,8 @@ class Hortaliza(Cultivo, ABC):
 
 # ==============================================================================
 # ARCHIVO 11/75: lechuga.py
-# Directorio: python_forestacion\entidades\cultivos
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\cultivos\lechuga.py
+# Directorio: python_forestacion/entidades/cultivos
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/cultivos/lechuga.py
 # ==============================================================================
 
 """
@@ -1455,8 +1395,8 @@ class Lechuga(Hortaliza):
 
 # ==============================================================================
 # ARCHIVO 12/75: olivo.py
-# Directorio: python_forestacion\entidades\cultivos
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\cultivos\olivo.py
+# Directorio: python_forestacion/entidades/cultivos
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/cultivos/olivo.py
 # ==============================================================================
 
 """
@@ -1516,8 +1456,8 @@ class Olivo(Arbol):
 
 # ==============================================================================
 # ARCHIVO 13/75: pino.py
-# Directorio: python_forestacion\entidades\cultivos
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\cultivos\pino.py
+# Directorio: python_forestacion/entidades/cultivos
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/cultivos/pino.py
 # ==============================================================================
 
 """
@@ -1576,8 +1516,8 @@ class Pino(Arbol):
 
 # ==============================================================================
 # ARCHIVO 14/75: tipo_aceituna.py
-# Directorio: python_forestacion\entidades\cultivos
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\cultivos\tipo_aceituna.py
+# Directorio: python_forestacion/entidades/cultivos
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/cultivos/tipo_aceituna.py
 # ==============================================================================
 
 """
@@ -1598,8 +1538,8 @@ class TipoAceituna(Enum):
 
 # ==============================================================================
 # ARCHIVO 15/75: zanahoria.py
-# Directorio: python_forestacion\entidades\cultivos
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\cultivos\zanahoria.py
+# Directorio: python_forestacion/entidades/cultivos
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/cultivos/zanahoria.py
 # ==============================================================================
 
 """
@@ -1657,21 +1597,21 @@ class Zanahoria(Hortaliza):
 
 
 ################################################################################
-# DIRECTORIO: python_forestacion\entidades\personal
+# DIRECTORIO: python_forestacion/entidades/personal
 ################################################################################
 
 # ==============================================================================
 # ARCHIVO 16/75: __init__.py
-# Directorio: python_forestacion\entidades\personal
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\personal\__init__.py
+# Directorio: python_forestacion/entidades/personal
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/personal/__init__.py
 # ==============================================================================
 
 
 
 # ==============================================================================
 # ARCHIVO 17/75: apto_medico.py
-# Directorio: python_forestacion\entidades\personal
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\personal\apto_medico.py
+# Directorio: python_forestacion/entidades/personal
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/personal/apto_medico.py
 # ==============================================================================
 
 """
@@ -1760,8 +1700,8 @@ class AptoMedico:
 
 # ==============================================================================
 # ARCHIVO 18/75: herramienta.py
-# Directorio: python_forestacion\entidades\personal
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\personal\herramienta.py
+# Directorio: python_forestacion/entidades/personal
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/personal/herramienta.py
 # ==============================================================================
 
 """
@@ -1847,8 +1787,8 @@ class Herramienta:
 
 # ==============================================================================
 # ARCHIVO 19/75: tarea.py
-# Directorio: python_forestacion\entidades\personal
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\personal\tarea.py
+# Directorio: python_forestacion/entidades/personal
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/personal/tarea.py
 # ==============================================================================
 
 """
@@ -1937,8 +1877,8 @@ class Tarea:
 
 # ==============================================================================
 # ARCHIVO 20/75: trabajador.py
-# Directorio: python_forestacion\entidades\personal
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\personal\trabajador.py
+# Directorio: python_forestacion/entidades/personal
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/personal/trabajador.py
 # ==============================================================================
 
 """
@@ -2050,21 +1990,21 @@ class Trabajador:
 
 
 ################################################################################
-# DIRECTORIO: python_forestacion\entidades\terrenos
+# DIRECTORIO: python_forestacion/entidades/terrenos
 ################################################################################
 
 # ==============================================================================
 # ARCHIVO 21/75: __init__.py
-# Directorio: python_forestacion\entidades\terrenos
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\terrenos\__init__.py
+# Directorio: python_forestacion/entidades/terrenos
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/terrenos/__init__.py
 # ==============================================================================
 
 
 
 # ==============================================================================
 # ARCHIVO 22/75: plantacion.py
-# Directorio: python_forestacion\entidades\terrenos
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\terrenos\plantacion.py
+# Directorio: python_forestacion/entidades/terrenos
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/terrenos/plantacion.py
 # ==============================================================================
 
 """
@@ -2257,8 +2197,8 @@ class Plantacion:
 
 # ==============================================================================
 # ARCHIVO 23/75: registro_forestal.py
-# Directorio: python_forestacion\entidades\terrenos
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\terrenos\registro_forestal.py
+# Directorio: python_forestacion/entidades/terrenos
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/terrenos/registro_forestal.py
 # ==============================================================================
 
 """
@@ -2398,8 +2338,8 @@ class RegistroForestal:
 
 # ==============================================================================
 # ARCHIVO 24/75: tierra.py
-# Directorio: python_forestacion\entidades\terrenos
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\terrenos\tierra.py
+# Directorio: python_forestacion/entidades/terrenos
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/terrenos/tierra.py
 # ==============================================================================
 
 """
@@ -2524,21 +2464,21 @@ class Tierra:
 
 
 ################################################################################
-# DIRECTORIO: python_forestacion\excepciones
+# DIRECTORIO: python_forestacion/excepciones
 ################################################################################
 
 # ==============================================================================
 # ARCHIVO 25/75: __init__.py
-# Directorio: python_forestacion\excepciones
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\excepciones\__init__.py
+# Directorio: python_forestacion/excepciones
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/excepciones/__init__.py
 # ==============================================================================
 
 
 
 # ==============================================================================
 # ARCHIVO 26/75: agua_agotada_exception.py
-# Directorio: python_forestacion\excepciones
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\excepciones\agua_agotada_exception.py
+# Directorio: python_forestacion/excepciones
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/excepciones/agua_agotada_exception.py
 # ==============================================================================
 
 """
@@ -2601,8 +2541,8 @@ class AguaAgotadaException(ForestacionException):
 
 # ==============================================================================
 # ARCHIVO 27/75: forestacion_exception.py
-# Directorio: python_forestacion\excepciones
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\excepciones\forestacion_exception.py
+# Directorio: python_forestacion/excepciones
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/excepciones/forestacion_exception.py
 # ==============================================================================
 
 """
@@ -2674,8 +2614,8 @@ class ForestacionException(Exception):
 
 # ==============================================================================
 # ARCHIVO 28/75: mensajes_exception.py
-# Directorio: python_forestacion\excepciones
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\excepciones\mensajes_exception.py
+# Directorio: python_forestacion/excepciones
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/excepciones/mensajes_exception.py
 # ==============================================================================
 
 """
@@ -2722,8 +2662,8 @@ MSG_PROPIETARIO_VACIO = "El nombre del propietario no puede ser nulo o vacio"
 
 # ==============================================================================
 # ARCHIVO 29/75: persistencia_exception.py
-# Directorio: python_forestacion\excepciones
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\excepciones\persistencia_exception.py
+# Directorio: python_forestacion/excepciones
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/excepciones/persistencia_exception.py
 # ==============================================================================
 
 """
@@ -2796,8 +2736,8 @@ class PersistenciaException(ForestacionException):
 
 # ==============================================================================
 # ARCHIVO 30/75: superficie_insuficiente_exception.py
-# Directorio: python_forestacion\excepciones
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\excepciones\superficie_insuficiente_exception.py
+# Directorio: python_forestacion/excepciones
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/excepciones/superficie_insuficiente_exception.py
 # ==============================================================================
 
 """
@@ -2863,34 +2803,34 @@ class SuperficieInsuficienteException(ForestacionException):
 
 
 ################################################################################
-# DIRECTORIO: python_forestacion\patrones
+# DIRECTORIO: python_forestacion/patrones
 ################################################################################
 
 # ==============================================================================
 # ARCHIVO 31/75: __init__.py
-# Directorio: python_forestacion\patrones
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\patrones\__init__.py
+# Directorio: python_forestacion/patrones
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/patrones/__init__.py
 # ==============================================================================
 
 
 
 
 ################################################################################
-# DIRECTORIO: python_forestacion\patrones\factory
+# DIRECTORIO: python_forestacion/patrones/factory
 ################################################################################
 
 # ==============================================================================
 # ARCHIVO 32/75: __init__.py
-# Directorio: python_forestacion\patrones\factory
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\patrones\factory\__init__.py
+# Directorio: python_forestacion/patrones/factory
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/patrones/factory/__init__.py
 # ==============================================================================
 
 
 
 # ==============================================================================
 # ARCHIVO 33/75: cultivo_factory.py
-# Directorio: python_forestacion\patrones\factory
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\patrones\factory\cultivo_factory.py
+# Directorio: python_forestacion/patrones/factory
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/patrones/factory/cultivo_factory.py
 # ==============================================================================
 
 """
@@ -3041,21 +2981,21 @@ class CultivoFactory:
 
 
 ################################################################################
-# DIRECTORIO: python_forestacion\patrones\observer
+# DIRECTORIO: python_forestacion/patrones/observer
 ################################################################################
 
 # ==============================================================================
 # ARCHIVO 34/75: __init__.py
-# Directorio: python_forestacion\patrones\observer
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\patrones\observer\__init__.py
+# Directorio: python_forestacion/patrones/observer
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/patrones/observer/__init__.py
 # ==============================================================================
 
 
 
 # ==============================================================================
 # ARCHIVO 35/75: observable.py
-# Directorio: python_forestacion\patrones\observer
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\patrones\observer\observable.py
+# Directorio: python_forestacion/patrones/observer
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/patrones/observer/observable.py
 # ==============================================================================
 
 """
@@ -3122,8 +3062,8 @@ class Observable(Generic[T], ABC):
 
 # ==============================================================================
 # ARCHIVO 36/75: observer.py
-# Directorio: python_forestacion\patrones\observer
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\patrones\observer\observer.py
+# Directorio: python_forestacion/patrones/observer
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/patrones/observer/observer.py
 # ==============================================================================
 
 """
@@ -3161,63 +3101,63 @@ class Observer(Generic[T], ABC):
 
 
 ################################################################################
-# DIRECTORIO: python_forestacion\patrones\observer\eventos
+# DIRECTORIO: python_forestacion/patrones/observer/eventos
 ################################################################################
 
 # ==============================================================================
 # ARCHIVO 37/75: __init__.py
-# Directorio: python_forestacion\patrones\observer\eventos
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\patrones\observer\eventos\__init__.py
+# Directorio: python_forestacion/patrones/observer/eventos
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/patrones/observer/eventos/__init__.py
 # ==============================================================================
 
 
 
 # ==============================================================================
 # ARCHIVO 38/75: evento_plantacion.py
-# Directorio: python_forestacion\patrones\observer\eventos
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\patrones\observer\eventos\evento_plantacion.py
+# Directorio: python_forestacion/patrones/observer/eventos
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/patrones/observer/eventos/evento_plantacion.py
 # ==============================================================================
 
 
 
 # ==============================================================================
 # ARCHIVO 39/75: evento_sensor.py
-# Directorio: python_forestacion\patrones\observer\eventos
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\patrones\observer\eventos\evento_sensor.py
+# Directorio: python_forestacion/patrones/observer/eventos
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/patrones/observer/eventos/evento_sensor.py
 # ==============================================================================
 
 
 
 
 ################################################################################
-# DIRECTORIO: python_forestacion\patrones\singleton
+# DIRECTORIO: python_forestacion/patrones/singleton
 ################################################################################
 
 # ==============================================================================
 # ARCHIVO 40/75: __init__.py
-# Directorio: python_forestacion\patrones\singleton
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\patrones\singleton\__init__.py
+# Directorio: python_forestacion/patrones/singleton
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/patrones/singleton/__init__.py
 # ==============================================================================
 
 
 
 
 ################################################################################
-# DIRECTORIO: python_forestacion\patrones\strategy
+# DIRECTORIO: python_forestacion/patrones/strategy
 ################################################################################
 
 # ==============================================================================
 # ARCHIVO 41/75: __init__.py
-# Directorio: python_forestacion\patrones\strategy
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\patrones\strategy\__init__.py
+# Directorio: python_forestacion/patrones/strategy
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/patrones/strategy/__init__.py
 # ==============================================================================
 
 
 
 # ==============================================================================
 # ARCHIVO 42/75: absorcion_agua_strategy.py
-# Directorio: python_forestacion\patrones\strategy
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\patrones\strategy\absorcion_agua_strategy.py
+# Directorio: python_forestacion/patrones/strategy
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/patrones/strategy/absorcion_agua_strategy.py
 # ==============================================================================
 
 """
@@ -3267,21 +3207,21 @@ class AbsorcionAguaStrategy(ABC):
 
 
 ################################################################################
-# DIRECTORIO: python_forestacion\patrones\strategy\impl
+# DIRECTORIO: python_forestacion/patrones/strategy/impl
 ################################################################################
 
 # ==============================================================================
 # ARCHIVO 43/75: __init__.py
-# Directorio: python_forestacion\patrones\strategy\impl
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\patrones\strategy\impl\__init__.py
+# Directorio: python_forestacion/patrones/strategy/impl
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/patrones/strategy/impl/__init__.py
 # ==============================================================================
 
 
 
 # ==============================================================================
 # ARCHIVO 44/75: absorcion_constante_strategy.py
-# Directorio: python_forestacion\patrones\strategy\impl
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\patrones\strategy\impl\absorcion_constante_strategy.py
+# Directorio: python_forestacion/patrones/strategy/impl
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/patrones/strategy/impl/absorcion_constante_strategy.py
 # ==============================================================================
 
 """
@@ -3341,8 +3281,8 @@ class AbsorcionConstanteStrategy(AbsorcionAguaStrategy):
 
 # ==============================================================================
 # ARCHIVO 45/75: absorcion_seasonal_strategy.py
-# Directorio: python_forestacion\patrones\strategy\impl
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\patrones\strategy\impl\absorcion_seasonal_strategy.py
+# Directorio: python_forestacion/patrones/strategy/impl
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/patrones/strategy/impl/absorcion_seasonal_strategy.py
 # ==============================================================================
 
 """
@@ -3405,34 +3345,34 @@ class AbsorcionSeasonalStrategy(AbsorcionAguaStrategy):
 
 
 ################################################################################
-# DIRECTORIO: python_forestacion\riego
+# DIRECTORIO: python_forestacion/riego
 ################################################################################
 
 # ==============================================================================
 # ARCHIVO 46/75: __init__.py
-# Directorio: python_forestacion\riego
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\riego\__init__.py
+# Directorio: python_forestacion/riego
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/riego/__init__.py
 # ==============================================================================
 
 
 
 
 ################################################################################
-# DIRECTORIO: python_forestacion\riego\control
+# DIRECTORIO: python_forestacion/riego/control
 ################################################################################
 
 # ==============================================================================
 # ARCHIVO 47/75: __init__.py
-# Directorio: python_forestacion\riego\control
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\riego\control\__init__.py
+# Directorio: python_forestacion/riego/control
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/riego/control/__init__.py
 # ==============================================================================
 
 
 
 # ==============================================================================
 # ARCHIVO 48/75: control_riego_task.py
-# Directorio: python_forestacion\riego\control
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\riego\control\control_riego_task.py
+# Directorio: python_forestacion/riego/control
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/riego/control/control_riego_task.py
 # ==============================================================================
 
 """
@@ -3543,21 +3483,21 @@ class ControlRiegoTask(threading.Thread, Observer[float]):
 
 
 ################################################################################
-# DIRECTORIO: python_forestacion\riego\sensores
+# DIRECTORIO: python_forestacion/riego/sensores
 ################################################################################
 
 # ==============================================================================
 # ARCHIVO 49/75: __init__.py
-# Directorio: python_forestacion\riego\sensores
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\riego\sensores\__init__.py
+# Directorio: python_forestacion/riego/sensores
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/riego/sensores/__init__.py
 # ==============================================================================
 
 
 
 # ==============================================================================
 # ARCHIVO 50/75: humedad_reader_task.py
-# Directorio: python_forestacion\riego\sensores
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\riego\sensores\humedad_reader_task.py
+# Directorio: python_forestacion/riego/sensores
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/riego/sensores/humedad_reader_task.py
 # ==============================================================================
 
 """
@@ -3621,8 +3561,8 @@ class HumedadReaderTask(threading.Thread, Observable[float]):
 
 # ==============================================================================
 # ARCHIVO 51/75: temperatura_reader_task.py
-# Directorio: python_forestacion\riego\sensores
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\riego\sensores\temperatura_reader_task.py
+# Directorio: python_forestacion/riego/sensores
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/riego/sensores/temperatura_reader_task.py
 # ==============================================================================
 
 """
@@ -3686,34 +3626,34 @@ class TemperaturaReaderTask(threading.Thread, Observable[float]):
 
 
 ################################################################################
-# DIRECTORIO: python_forestacion\servicios
+# DIRECTORIO: python_forestacion/servicios
 ################################################################################
 
 # ==============================================================================
 # ARCHIVO 52/75: __init__.py
-# Directorio: python_forestacion\servicios
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\servicios\__init__.py
+# Directorio: python_forestacion/servicios
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/servicios/__init__.py
 # ==============================================================================
 
 
 
 
 ################################################################################
-# DIRECTORIO: python_forestacion\servicios\cultivos
+# DIRECTORIO: python_forestacion/servicios/cultivos
 ################################################################################
 
 # ==============================================================================
 # ARCHIVO 53/75: __init__.py
-# Directorio: python_forestacion\servicios\cultivos
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\servicios\cultivos\__init__.py
+# Directorio: python_forestacion/servicios/cultivos
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/servicios/cultivos/__init__.py
 # ==============================================================================
 
 
 
 # ==============================================================================
 # ARCHIVO 54/75: arbol_service.py
-# Directorio: python_forestacion\servicios\cultivos
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\servicios\cultivos\arbol_service.py
+# Directorio: python_forestacion/servicios/cultivos
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/servicios/cultivos/arbol_service.py
 # ==============================================================================
 
 """
@@ -3763,8 +3703,8 @@ class ArbolService(CultivoService, ABC):
 
 # ==============================================================================
 # ARCHIVO 55/75: cultivo_service.py
-# Directorio: python_forestacion\servicios\cultivos
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\servicios\cultivos\cultivo_service.py
+# Directorio: python_forestacion/servicios/cultivos
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/servicios/cultivos/cultivo_service.py
 # ==============================================================================
 
 """
@@ -3838,8 +3778,8 @@ class CultivoService(ABC):
 
 # ==============================================================================
 # ARCHIVO 56/75: cultivo_service_registry.py
-# Directorio: python_forestacion\servicios\cultivos
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\servicios\cultivos\cultivo_service_registry.py
+# Directorio: python_forestacion/servicios/cultivos
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/servicios/cultivos/cultivo_service_registry.py
 # ==============================================================================
 
 """
@@ -4001,8 +3941,8 @@ class CultivoServiceRegistry:
 
 # ==============================================================================
 # ARCHIVO 57/75: lechuga_service.py
-# Directorio: python_forestacion\servicios\cultivos
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\servicios\cultivos\lechuga_service.py
+# Directorio: python_forestacion/servicios/cultivos
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/servicios/cultivos/lechuga_service.py
 # ==============================================================================
 
 """
@@ -4049,8 +3989,8 @@ class LechugaService(CultivoService):
 
 # ==============================================================================
 # ARCHIVO 58/75: olivo_service.py
-# Directorio: python_forestacion\servicios\cultivos
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\servicios\cultivos\olivo_service.py
+# Directorio: python_forestacion/servicios/cultivos
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/servicios/cultivos/olivo_service.py
 # ==============================================================================
 
 """
@@ -4114,8 +4054,8 @@ class OlivoService(ArbolService):
 
 # ==============================================================================
 # ARCHIVO 59/75: pino_service.py
-# Directorio: python_forestacion\servicios\cultivos
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\servicios\cultivos\pino_service.py
+# Directorio: python_forestacion/servicios/cultivos
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/servicios/cultivos/pino_service.py
 # ==============================================================================
 
 """
@@ -4179,8 +4119,8 @@ class PinoService(ArbolService):
 
 # ==============================================================================
 # ARCHIVO 60/75: zanahoria_service.py
-# Directorio: python_forestacion\servicios\cultivos
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\servicios\cultivos\zanahoria_service.py
+# Directorio: python_forestacion/servicios/cultivos
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/servicios/cultivos/zanahoria_service.py
 # ==============================================================================
 
 """
@@ -4227,21 +4167,21 @@ class ZanahoriaService(CultivoService):
 
 
 ################################################################################
-# DIRECTORIO: python_forestacion\servicios\negocio
+# DIRECTORIO: python_forestacion/servicios/negocio
 ################################################################################
 
 # ==============================================================================
 # ARCHIVO 61/75: __init__.py
-# Directorio: python_forestacion\servicios\negocio
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\servicios\negocio\__init__.py
+# Directorio: python_forestacion/servicios/negocio
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/servicios/negocio/__init__.py
 # ==============================================================================
 
 
 
 # ==============================================================================
 # ARCHIVO 62/75: fincas_service.py
-# Directorio: python_forestacion\servicios\negocio
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\servicios\negocio\fincas_service.py
+# Directorio: python_forestacion/servicios/negocio
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/servicios/negocio/fincas_service.py
 # ==============================================================================
 
 """
@@ -4355,8 +4295,8 @@ class FincasService:
 
 # ==============================================================================
 # ARCHIVO 63/75: paquete.py
-# Directorio: python_forestacion\servicios\negocio
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\servicios\negocio\paquete.py
+# Directorio: python_forestacion/servicios/negocio
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/servicios/negocio/paquete.py
 # ==============================================================================
 
 """
@@ -4449,21 +4389,21 @@ class Paquete(Generic[T]):
 
 
 ################################################################################
-# DIRECTORIO: python_forestacion\servicios\personal
+# DIRECTORIO: python_forestacion/servicios/personal
 ################################################################################
 
 # ==============================================================================
 # ARCHIVO 64/75: __init__.py
-# Directorio: python_forestacion\servicios\personal
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\servicios\personal\__init__.py
+# Directorio: python_forestacion/servicios/personal
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/servicios/personal/__init__.py
 # ==============================================================================
 
 
 
 # ==============================================================================
 # ARCHIVO 65/75: trabajador_service.py
-# Directorio: python_forestacion\servicios\personal
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\servicios\personal\trabajador_service.py
+# Directorio: python_forestacion/servicios/personal
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/servicios/personal/trabajador_service.py
 # ==============================================================================
 
 """
@@ -4569,21 +4509,21 @@ class TrabajadorService:
 
 
 ################################################################################
-# DIRECTORIO: python_forestacion\servicios\terrenos
+# DIRECTORIO: python_forestacion/servicios/terrenos
 ################################################################################
 
 # ==============================================================================
 # ARCHIVO 66/75: __init__.py
-# Directorio: python_forestacion\servicios\terrenos
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\servicios\terrenos\__init__.py
+# Directorio: python_forestacion/servicios/terrenos
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/servicios/terrenos/__init__.py
 # ==============================================================================
 
 
 
 # ==============================================================================
 # ARCHIVO 67/75: plantacion_service.py
-# Directorio: python_forestacion\servicios\terrenos
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\servicios\terrenos\plantacion_service.py
+# Directorio: python_forestacion/servicios/terrenos
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/servicios/terrenos/plantacion_service.py
 # ==============================================================================
 
 """
@@ -4723,8 +4663,8 @@ class PlantacionService:
 
 # ==============================================================================
 # ARCHIVO 68/75: registro_forestal_service.py
-# Directorio: python_forestacion\servicios\terrenos
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\servicios\terrenos\registro_forestal_service.py
+# Directorio: python_forestacion/servicios/terrenos
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/servicios/terrenos/registro_forestal_service.py
 # ==============================================================================
 
 """
@@ -4886,8 +4826,8 @@ class RegistroForestalService:
 
 # ==============================================================================
 # ARCHIVO 69/75: tierra_service.py
-# Directorio: python_forestacion\servicios\terrenos
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\servicios\terrenos\tierra_service.py
+# Directorio: python_forestacion/servicios/terrenos
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/servicios/terrenos/tierra_service.py
 # ==============================================================================
 
 """
@@ -4952,7 +4892,7 @@ class TierraService:
 # ==============================================================================
 # ARCHIVO 70/75: __init__.py
 # Directorio: tests
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\tests\__init__.py
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/tests/__init__.py
 # ==============================================================================
 
 
@@ -4960,7 +4900,7 @@ class TierraService:
 # ==============================================================================
 # ARCHIVO 71/75: test_factory.py
 # Directorio: tests
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\tests\test_factory.py
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/tests/test_factory.py
 # ==============================================================================
 
 import unittest
@@ -5039,7 +4979,7 @@ if __name__ == '__main__':
 # ==============================================================================
 # ARCHIVO 72/75: test_observer.py
 # Directorio: tests
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\tests\test_observer.py
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/tests/test_observer.py
 # ==============================================================================
 
 import unittest
@@ -5104,7 +5044,7 @@ if __name__ == '__main__':
 # ==============================================================================
 # ARCHIVO 73/75: test_singleton.py
 # Directorio: tests
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\tests\test_singleton.py
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/tests/test_singleton.py
 # ==============================================================================
 
 import unittest
@@ -5142,7 +5082,7 @@ if __name__ == '__main__':
 # ==============================================================================
 # ARCHIVO 74/75: test_strategy.py
 # Directorio: tests
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\tests\test_strategy.py
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/tests/test_strategy.py
 # ==============================================================================
 
 import unittest
@@ -5200,7 +5140,7 @@ if __name__ == '__main__':
 # ==============================================================================
 # ARCHIVO 75/75: test_system.py
 # Directorio: tests
-# Ruta completa: C:\Josias\UM\3ro\DisenoSistemas\Parcial\tests\test_system.py
+# Ruta completa: /home/josiasvilches/cursada/disenosistemas/python-forestal/tests/test_system.py
 # ==============================================================================
 
 import os
@@ -5286,5 +5226,5 @@ if __name__ == '__main__':
 ################################################################################
 # FIN DEL INTEGRADOR FINAL
 # Total de archivos: 75
-# Generado: 2025-10-21 18:36:36
+# Generado: 2025-10-22 09:43:42
 ################################################################################

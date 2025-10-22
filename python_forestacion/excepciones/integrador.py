@@ -1,20 +1,20 @@
 """
 Archivo integrador generado automaticamente
-Directorio: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\excepciones
-Fecha: 2025-10-21 18:36:35
+Directorio: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/excepciones
+Fecha: 2025-10-22 09:43:42
 Total de archivos integrados: 6
 """
 
 # ================================================================================
 # ARCHIVO 1/6: __init__.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\excepciones\__init__.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/excepciones/__init__.py
 # ================================================================================
 
 
 
 # ================================================================================
 # ARCHIVO 2/6: agua_agotada_exception.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\excepciones\agua_agotada_exception.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/excepciones/agua_agotada_exception.py
 # ================================================================================
 
 """
@@ -77,7 +77,7 @@ class AguaAgotadaException(ForestacionException):
 
 # ================================================================================
 # ARCHIVO 3/6: forestacion_exception.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\excepciones\forestacion_exception.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/excepciones/forestacion_exception.py
 # ================================================================================
 
 """
@@ -149,7 +149,7 @@ class ForestacionException(Exception):
 
 # ================================================================================
 # ARCHIVO 4/6: mensajes_exception.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\excepciones\mensajes_exception.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/excepciones/mensajes_exception.py
 # ================================================================================
 
 """
@@ -196,7 +196,7 @@ MSG_PROPIETARIO_VACIO = "El nombre del propietario no puede ser nulo o vacio"
 
 # ================================================================================
 # ARCHIVO 5/6: persistencia_exception.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\excepciones\persistencia_exception.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/excepciones/persistencia_exception.py
 # ================================================================================
 
 """
@@ -269,7 +269,7 @@ class PersistenciaException(ForestacionException):
 
 # ================================================================================
 # ARCHIVO 6/6: superficie_insuficiente_exception.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\excepciones\superficie_insuficiente_exception.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/excepciones/superficie_insuficiente_exception.py
 # ================================================================================
 
 """

@@ -1,20 +1,20 @@
 """
 Archivo integrador generado automaticamente
-Directorio: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\personal
-Fecha: 2025-10-21 18:36:35
+Directorio: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/personal
+Fecha: 2025-10-22 09:43:42
 Total de archivos integrados: 5
 """
 
 # ================================================================================
 # ARCHIVO 1/5: __init__.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\personal\__init__.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/personal/__init__.py
 # ================================================================================
 
 
 
 # ================================================================================
 # ARCHIVO 2/5: apto_medico.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\personal\apto_medico.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/personal/apto_medico.py
 # ================================================================================
 
 """
@@ -103,7 +103,7 @@ class AptoMedico:
 
 # ================================================================================
 # ARCHIVO 3/5: herramienta.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\personal\herramienta.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/personal/herramienta.py
 # ================================================================================
 
 """
@@ -189,7 +189,7 @@ class Herramienta:
 
 # ================================================================================
 # ARCHIVO 4/5: tarea.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\personal\tarea.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/personal/tarea.py
 # ================================================================================
 
 """
@@ -278,7 +278,7 @@ class Tarea:
 
 # ================================================================================
 # ARCHIVO 5/5: trabajador.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\personal\trabajador.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/personal/trabajador.py
 # ================================================================================
 
 """

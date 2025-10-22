@@ -1,13 +1,13 @@
 """
 Archivo integrador generado automaticamente
-Directorio: C:\Josias\UM\3ro\DisenoSistemas\Parcial
-Fecha: 2025-10-21 18:36:36
+Directorio: /home/josiasvilches/cursada/disenosistemas/python-forestal
+Fecha: 2025-10-22 09:43:42
 Total de archivos integrados: 3
 """
 
 # ================================================================================
 # ARCHIVO 1/3: buscar_paquete.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\buscar_paquete.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/buscar_paquete.py
 # ================================================================================
 
 """
@@ -424,8 +424,186 @@ if __name__ == "__main__":
     sys.exit(main())
 
 # ================================================================================
-# ARCHIVO 2/3: main.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\main.py
+# ARCHIVO 2/3: evaluador.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/evaluador.py
+# ================================================================================
+
+#!/usr/bin/env python3
+"""
+Script helper para evaluacion automatizada.
+Uso: python evaluador_automatico.py --proyecto /path/to/proyecto --config config.json
+"""
+
+import json
+import subprocess
+import sys
+from pathlib import Path
+from typing import Dict, List, Any
+
+class EvaluadorAutomatico:
+    def __init__(self, proyecto_path: str, config_path: str):
+        self.proyecto_path = Path(proyecto_path)
+        self.config = self._cargar_config(config_path)
+        self.resultados = []
+
+    def _cargar_config(self, config_path: str) -> Dict:
+        with open(config_path, 'r') as f:
+            return json.load(f)
+
+    def ejecutar_comando(self, comando: str) -> Dict[str, Any]:
+        """Ejecuta comando y retorna resultado."""
+        try:
+            resultado = subprocess.run(
+                comando,
+                shell=True,
+                cwd=self.proyecto_path,
+                capture_output=True,
+                text=True,
+                timeout=30
+            )
+            return {
+                'exitcode': resultado.returncode,
+                'stdout': resultado.stdout,
+                'stderr': resultado.stderr,
+                'exito': resultado.returncode == 0
+            }
+        except subprocess.TimeoutExpired:
+            return {
+                'exitcode': -1,
+                'stdout': '',
+                'stderr': 'Timeout',
+                'exito': False
+            }
+
+    def evaluar_criterio(self, criterio: Dict) -> Dict:
+        """Evalua un criterio individual."""
+        resultado_cmd = self.ejecutar_comando(criterio['comando'])
+
+        # Contar coincidencias
+        coincidencias = resultado_cmd['stdout'].count('\n')
+
+        # Evaluar segun threshold
+        inverted = criterio.get('inverted', False)
+        if inverted:
+            pasado = coincidencias <= criterio['threshold']
+        else:
+            pasado = coincidencias >= criterio['threshold']
+
+        return {
+            'id': criterio['id'],
+            'categoria': criterio['categoria'],
+            'pasado': pasado,
+            'coincidencias': coincidencias,
+            'threshold': criterio['threshold'],
+            'puntaje_max': criterio['puntaje'],
+            'puntaje_obtenido': criterio['puntaje'] if pasado else 0,
+            'peso': criterio['peso'],
+            'output': resultado_cmd['stdout'][:500]  # Primeros 500 chars
+        }
+
+    def evaluar_todos(self) -> Dict:
+        """Evalua todos los criterios."""
+        for criterio in self.config['evaluacion']['criterios']:
+            resultado = self.evaluar_criterio(criterio)
+            self.resultados.append(resultado)
+
+        # Calcular totales
+        puntaje_total = sum(r['puntaje_obtenido'] for r in self.resultados)
+        puntaje_maximo = self.config['evaluacion']['puntaje_maximo']
+        porcentaje = (puntaje_total / puntaje_maximo) * 100
+
+        # Determinar calificacion
+        if porcentaje >= 90:
+            calificacion = 'Excelente'
+        elif porcentaje >= 80:
+            calificacion = 'Muy Bueno'
+        elif porcentaje >= 70:
+            calificacion = 'Bueno'
+        elif porcentaje >= 60:
+            calificacion = 'Suficiente'
+        else:
+            calificacion = 'Insuficiente'
+
+        return {
+            'puntaje_total': puntaje_total,
+            'puntaje_maximo': puntaje_maximo,
+            'porcentaje': round(porcentaje, 2),
+            'calificacion': calificacion,
+            'aprobado': porcentaje >= 70,
+            'criterios_pasados': sum(1 for r in self.resultados if r['pasado']),
+            'criterios_fallados': sum(1 for r in self.resultados if not r['pasado']),
+            'resultados': self.resultados
+        }
+
+    def generar_reporte_json(self, output_path: str):
+        """Genera reporte en formato JSON."""
+        resumen = self.evaluar_todos()
+        with open(output_path, 'w') as f:
+            json.dump(resumen, f, indent=2)
+
+    def generar_reporte_markdown(self, output_path: str):
+        """Genera reporte en formato Markdown."""
+        resumen = self.evaluar_todos()
+
+        markdown = f"""# Reporte de Evaluacion Automatizada
+
+**Proyecto**: {self.proyecto_path.name}
+**Fecha**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+
+## Resumen
+
+- **Puntaje Total**: {resumen['puntaje_total']}/{resumen['puntaje_maximo']}
+- **Porcentaje**: {resumen['porcentaje']}%
+- **Calificacion**: {resumen['calificacion']}
+- **Estado**: {'APROBADO' if resumen['aprobado'] else 'NO APROBADO'}
+
+## Detalles
+
+| Criterio | Categoria | Pasado | Puntaje | Peso |
+|----------|-----------|--------|---------|------|
+"""
+        for r in self.resultados:
+            estado = '✓' if r['pasado'] else '✗'
+            markdown += f"| {r['id']} | {r['categoria']} | {estado} | {r['puntaje_obtenido']}/{r['puntaje_max']} | {r['peso']} |\n"
+
+        with open(output_path, 'w') as f:
+            f.write(markdown)
+
+
+if __name__ == '__main__':
+    import argparse
+    from datetime import datetime
+
+    parser = argparse.ArgumentParser(description='Evaluador automatico de proyectos')
+    parser.add_argument('--proyecto', required=True, help='Path al proyecto')
+    parser.add_argument('--config', required=True, help='Path al archivo de configuracion')
+    parser.add_argument('--output-json', help='Path para reporte JSON')
+    parser.add_argument('--output-md', help='Path para reporte Markdown')
+
+    args = parser.parse_args()
+
+    evaluador = EvaluadorAutomatico(args.proyecto, args.config)
+
+    if args.output_json:
+        evaluador.generar_reporte_json(args.output_json)
+        print(f"Reporte JSON generado: {args.output_json}")
+
+    if args.output_md:
+        evaluador.generar_reporte_markdown(args.output_md)
+        print(f"Reporte Markdown generado: {args.output_md}")
+
+    # Imprimir resumen en consola
+    resumen = evaluador.evaluar_todos()
+    print(f"\n=== RESUMEN ===")
+    print(f"Puntaje: {resumen['puntaje_total']}/{resumen['puntaje_maximo']} ({resumen['porcentaje']}%)")
+    print(f"Calificacion: {resumen['calificacion']}")
+    print(f"Estado: {'APROBADO' if resumen['aprobado'] else 'NO APROBADO'}")
+
+    sys.exit(0 if resumen['aprobado'] else 1)
+
+# ================================================================================
+# ARCHIVO 3/3: main.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/main.py
 # ================================================================================
 
 """
@@ -685,242 +863,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# ================================================================================
-# ARCHIVO 3/3: verificarproec.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\verificarproec.py
-# ================================================================================
-
-"""
-Script de verificacion del proyecto PythonForestal.
-
-Verifica que todos los archivos esten presentes y sean importables.
-"""
-
-import os
-import sys
-
-
-def verificar_estructura():
-    """
-    Verifica la estructura de directorios del proyecto.
-    
-    Returns:
-        True si la estructura es correcta
-    """
-    print("=" * 70)
-    print("VERIFICANDO ESTRUCTURA DEL PROYECTO")
-    print("=" * 70)
-    
-    directorios_requeridos = [
-        "python_forestacion",
-        "python_forestacion/entidades",
-        "python_forestacion/entidades/cultivos",
-        "python_forestacion/entidades/terrenos",
-        "python_forestacion/entidades/personal",
-        "python_forestacion/servicios",
-        "python_forestacion/servicios/cultivos",
-        "python_forestacion/servicios/terrenos",
-        "python_forestacion/servicios/personal",
-        "python_forestacion/servicios/negocio",
-        "python_forestacion/patrones",
-        "python_forestacion/patrones/factory",
-        "python_forestacion/patrones/observer",
-        "python_forestacion/patrones/strategy",
-        "python_forestacion/patrones/strategy/impl",
-        "python_forestacion/riego",
-        "python_forestacion/riego/sensores",
-        "python_forestacion/riego/control",
-        "python_forestacion/excepciones"
-    ]
-    
-    archivos_requeridos = [
-        "main.py",
-        "README.md",
-        "python_forestacion/constantes.py",
-        "python_forestacion/entidades/cultivos/cultivo.py",
-        "python_forestacion/entidades/cultivos/pino.py",
-        "python_forestacion/entidades/cultivos/olivo.py",
-        "python_forestacion/entidades/cultivos/lechuga.py",
-        "python_forestacion/entidades/cultivos/zanahoria.py",
-        "python_forestacion/patrones/factory/cultivo_factory.py",
-        "python_forestacion/patrones/observer/observable.py",
-        "python_forestacion/patrones/observer/observer.py",
-        "python_forestacion/patrones/strategy/absorcion_agua_strategy.py",
-        "python_forestacion/servicios/cultivos/cultivo_service_registry.py"
-    ]
-    
-    errores = 0
-    
-    print("\nVerificando directorios...")
-    for directorio in directorios_requeridos:
-        if os.path.isdir(directorio):
-            print(f"  [OK] {directorio}")
-        else:
-            print(f"  [FALTA] {directorio}")
-            errores += 1
-    
-    print("\nVerificando archivos clave...")
-    for archivo in archivos_requeridos:
-        if os.path.isfile(archivo):
-            print(f"  [OK] {archivo}")
-        else:
-            print(f"  [FALTA] {archivo}")
-            errores += 1
-    
-    if errores == 0:
-        print("\n[EXITO] Estructura del proyecto correcta")
-        return True
-    else:
-        print(f"\n[ERROR] Faltan {errores} elementos")
-        return False
-
-
-def verificar_imports():
-    """
-    Verifica que los modulos principales sean importables.
-    
-    Returns:
-        True si todos los imports funcionan
-    """
-    print("\n" + "=" * 70)
-    print("VERIFICANDO IMPORTS")
-    print("=" * 70)
-    
-    modulos_a_verificar = [
-        "python_forestacion.constantes",
-        "python_forestacion.entidades.cultivos.pino",
-        "python_forestacion.entidades.cultivos.olivo",
-        "python_forestacion.entidades.cultivos.lechuga",
-        "python_forestacion.entidades.cultivos.zanahoria",
-        "python_forestacion.patrones.factory.cultivo_factory",
-        "python_forestacion.patrones.observer.observable",
-        "python_forestacion.patrones.observer.observer",
-        "python_forestacion.patrones.strategy.absorcion_agua_strategy",
-        "python_forestacion.servicios.cultivos.cultivo_service_registry",
-        "python_forestacion.servicios.terrenos.plantacion_service",
-        "python_forestacion.riego.sensores.temperatura_reader_task",
-        "python_forestacion.riego.control.control_riego_task"
-    ]
-    
-    errores = 0
-    
-    for modulo in modulos_a_verificar:
-        try:
-            __import__(modulo)
-            print(f"  [OK] {modulo}")
-        except Exception as e:
-            print(f"  [ERROR] {modulo}: {str(e)}")
-            errores += 1
-    
-    if errores == 0:
-        print("\n[EXITO] Todos los imports funcionan correctamente")
-        return True
-    else:
-        print(f"\n[ERROR] {errores} imports fallidos")
-        return False
-
-
-def verificar_patrones():
-    """
-    Verifica que los patrones esten implementados.
-    
-    Returns:
-        True si los patrones estan presentes
-    """
-    print("\n" + "=" * 70)
-    print("VERIFICANDO PATRONES DE DISENO")
-    print("=" * 70)
-    
-    errores = 0
-    
-    # Singleton
-    print("\n[1] SINGLETON Pattern:")
-    try:
-        from python_forestacion.servicios.cultivos.cultivo_service_registry import CultivoServiceRegistry
-        registry1 = CultivoServiceRegistry()
-        registry2 = CultivoServiceRegistry.get_instance()
-        if registry1 is registry2:
-            print("  [OK] Singleton implementado correctamente")
-        else:
-            print("  [ERROR] Singleton no retorna misma instancia")
-            errores += 1
-    except Exception as e:
-        print(f"  [ERROR] {str(e)}")
-        errores += 1
-    
-    # Factory
-    print("\n[2] FACTORY METHOD Pattern:")
-    try:
-        from python_forestacion.patrones.factory.cultivo_factory import CultivoFactory
-        cultivo = CultivoFactory.crear_cultivo("Pino")
-        print(f"  [OK] Factory crea cultivos: {type(cultivo).__name__}")
-    except Exception as e:
-        print(f"  [ERROR] {str(e)}")
-        errores += 1
-    
-    # Observer
-    print("\n[3] OBSERVER Pattern:")
-    try:
-        from python_forestacion.patrones.observer.observable import Observable
-        from python_forestacion.patrones.observer.observer import Observer
-        print("  [OK] Observable y Observer definidos")
-    except Exception as e:
-        print(f"  [ERROR] {str(e)}")
-        errores += 1
-    
-    # Strategy
-    print("\n[4] STRATEGY Pattern:")
-    try:
-        from python_forestacion.patrones.strategy.absorcion_agua_strategy import AbsorcionAguaStrategy
-        from python_forestacion.patrones.strategy.impl.absorcion_seasonal_strategy import AbsorcionSeasonalStrategy
-        from python_forestacion.patrones.strategy.impl.absorcion_constante_strategy import AbsorcionConstanteStrategy
-        print("  [OK] Estrategias implementadas")
-    except Exception as e:
-        print(f"  [ERROR] {str(e)}")
-        errores += 1
-    
-    if errores == 0:
-        print("\n[EXITO] Todos los patrones implementados correctamente")
-        return True
-    else:
-        print(f"\n[ERROR] {errores} patrones con problemas")
-        return False
-
-
-def main():
-    """
-    Ejecuta todas las verificaciones.
-    """
-    print("\n")
-    print("#" * 70)
-    print("  VERIFICADOR DE PROYECTO - PythonForestal")
-    print("#" * 70)
-    
-    resultado_estructura = verificar_estructura()
-    resultado_imports = verificar_imports()
-    resultado_patrones = verificar_patrones()
-    
-    print("\n" + "=" * 70)
-    print("RESUMEN")
-    print("=" * 70)
-    print(f"Estructura:  {'OK' if resultado_estructura else 'ERROR'}")
-    print(f"Imports:     {'OK' if resultado_imports else 'ERROR'}")
-    print(f"Patrones:    {'OK' if resultado_patrones else 'ERROR'}")
-    
-    if resultado_estructura and resultado_imports and resultado_patrones:
-        print("\n" + "=" * 70)
-        print("  [EXITO TOTAL] Proyecto listo para ejecutar")
-        print("  Ejecuta: python main.py")
-        print("=" * 70)
-        return 0
-    else:
-        print("\n" + "=" * 70)
-        print("  [ADVERTENCIA] Corrige los errores antes de ejecutar")
-        print("=" * 70)
-        return 1
-
-
-if __name__ == "__main__":
-    sys.exit(main())
 

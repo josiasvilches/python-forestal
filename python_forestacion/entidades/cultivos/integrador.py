@@ -1,20 +1,20 @@
 """
 Archivo integrador generado automaticamente
-Directorio: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\cultivos
-Fecha: 2025-10-21 18:36:35
+Directorio: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/cultivos
+Fecha: 2025-10-22 09:43:42
 Total de archivos integrados: 9
 """
 
 # ================================================================================
 # ARCHIVO 1/9: __init__.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\cultivos\__init__.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/cultivos/__init__.py
 # ================================================================================
 
 
 
 # ================================================================================
 # ARCHIVO 2/9: arbol.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\cultivos\arbol.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/cultivos/arbol.py
 # ================================================================================
 
 """
@@ -69,7 +69,7 @@ class Arbol(Cultivo, ABC):
 
 # ================================================================================
 # ARCHIVO 3/9: cultivo.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\cultivos\cultivo.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/cultivos/cultivo.py
 # ================================================================================
 
 """
@@ -152,7 +152,7 @@ class Cultivo(ABC):
 
 # ================================================================================
 # ARCHIVO 4/9: hortaliza.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\cultivos\hortaliza.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/cultivos/hortaliza.py
 # ================================================================================
 
 """
@@ -207,7 +207,7 @@ class Hortaliza(Cultivo, ABC):
 
 # ================================================================================
 # ARCHIVO 5/9: lechuga.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\cultivos\lechuga.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/cultivos/lechuga.py
 # ================================================================================
 
 """
@@ -265,7 +265,7 @@ class Lechuga(Hortaliza):
 
 # ================================================================================
 # ARCHIVO 6/9: olivo.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\cultivos\olivo.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/cultivos/olivo.py
 # ================================================================================
 
 """
@@ -325,7 +325,7 @@ class Olivo(Arbol):
 
 # ================================================================================
 # ARCHIVO 7/9: pino.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\cultivos\pino.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/cultivos/pino.py
 # ================================================================================
 
 """
@@ -384,7 +384,7 @@ class Pino(Arbol):
 
 # ================================================================================
 # ARCHIVO 8/9: tipo_aceituna.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\cultivos\tipo_aceituna.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/cultivos/tipo_aceituna.py
 # ================================================================================
 
 """
@@ -405,7 +405,7 @@ class TipoAceituna(Enum):
 
 # ================================================================================
 # ARCHIVO 9/9: zanahoria.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\cultivos\zanahoria.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/cultivos/zanahoria.py
 # ================================================================================
 
 """

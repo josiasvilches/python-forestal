@@ -1,20 +1,20 @@
 """
 Archivo integrador generado automaticamente
-Directorio: C:\Josias\UM\3ro\DisenoSistemas\Parcial\tests
-Fecha: 2025-10-21 18:36:36
+Directorio: /home/josiasvilches/cursada/disenosistemas/python-forestal/tests
+Fecha: 2025-10-22 09:43:42
 Total de archivos integrados: 6
 """
 
 # ================================================================================
 # ARCHIVO 1/6: __init__.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\tests\__init__.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/tests/__init__.py
 # ================================================================================
 
 
 
 # ================================================================================
 # ARCHIVO 2/6: test_factory.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\tests\test_factory.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/tests/test_factory.py
 # ================================================================================
 
 import unittest
@@ -92,7 +92,7 @@ if __name__ == '__main__':
 
 # ================================================================================
 # ARCHIVO 3/6: test_observer.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\tests\test_observer.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/tests/test_observer.py
 # ================================================================================
 
 import unittest
@@ -156,7 +156,7 @@ if __name__ == '__main__':
 
 # ================================================================================
 # ARCHIVO 4/6: test_singleton.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\tests\test_singleton.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/tests/test_singleton.py
 # ================================================================================
 
 import unittest
@@ -193,7 +193,7 @@ if __name__ == '__main__':
 
 # ================================================================================
 # ARCHIVO 5/6: test_strategy.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\tests\test_strategy.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/tests/test_strategy.py
 # ================================================================================
 
 import unittest
@@ -250,7 +250,7 @@ if __name__ == '__main__':
 
 # ================================================================================
 # ARCHIVO 6/6: test_system.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\tests\test_system.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/tests/test_system.py
 # ================================================================================
 
 import os

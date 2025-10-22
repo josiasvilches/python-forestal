@@ -1,20 +1,20 @@
 """
 Archivo integrador generado automaticamente
-Directorio: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\terrenos
-Fecha: 2025-10-21 18:36:35
+Directorio: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/terrenos
+Fecha: 2025-10-22 09:43:42
 Total de archivos integrados: 4
 """
 
 # ================================================================================
 # ARCHIVO 1/4: __init__.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\terrenos\__init__.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/terrenos/__init__.py
 # ================================================================================
 
 
 
 # ================================================================================
 # ARCHIVO 2/4: plantacion.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\terrenos\plantacion.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/terrenos/plantacion.py
 # ================================================================================
 
 """
@@ -207,7 +207,7 @@ class Plantacion:
 
 # ================================================================================
 # ARCHIVO 3/4: registro_forestal.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\terrenos\registro_forestal.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/terrenos/registro_forestal.py
 # ================================================================================
 
 """
@@ -347,7 +347,7 @@ class RegistroForestal:
 
 # ================================================================================
 # ARCHIVO 4/4: tierra.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\entidades\terrenos\tierra.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/entidades/terrenos/tierra.py
 # ================================================================================
 
 """

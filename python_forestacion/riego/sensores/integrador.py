@@ -1,20 +1,20 @@
 """
 Archivo integrador generado automaticamente
-Directorio: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\riego\sensores
-Fecha: 2025-10-21 18:36:35
+Directorio: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/riego/sensores
+Fecha: 2025-10-22 09:43:42
 Total de archivos integrados: 3
 """
 
 # ================================================================================
 # ARCHIVO 1/3: __init__.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\riego\sensores\__init__.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/riego/sensores/__init__.py
 # ================================================================================
 
 
 
 # ================================================================================
 # ARCHIVO 2/3: humedad_reader_task.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\riego\sensores\humedad_reader_task.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/riego/sensores/humedad_reader_task.py
 # ================================================================================
 
 """
@@ -78,7 +78,7 @@ class HumedadReaderTask(threading.Thread, Observable[float]):
 
 # ================================================================================
 # ARCHIVO 3/3: temperatura_reader_task.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\riego\sensores\temperatura_reader_task.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/riego/sensores/temperatura_reader_task.py
 # ================================================================================
 
 """

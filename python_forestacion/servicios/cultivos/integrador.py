@@ -1,20 +1,20 @@
 """
 Archivo integrador generado automaticamente
-Directorio: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\servicios\cultivos
-Fecha: 2025-10-21 18:36:35
+Directorio: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/servicios/cultivos
+Fecha: 2025-10-22 09:43:42
 Total de archivos integrados: 8
 """
 
 # ================================================================================
 # ARCHIVO 1/8: __init__.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\servicios\cultivos\__init__.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/servicios/cultivos/__init__.py
 # ================================================================================
 
 
 
 # ================================================================================
 # ARCHIVO 2/8: arbol_service.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\servicios\cultivos\arbol_service.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/servicios/cultivos/arbol_service.py
 # ================================================================================
 
 """
@@ -64,7 +64,7 @@ class ArbolService(CultivoService, ABC):
 
 # ================================================================================
 # ARCHIVO 3/8: cultivo_service.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\servicios\cultivos\cultivo_service.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/servicios/cultivos/cultivo_service.py
 # ================================================================================
 
 """
@@ -138,7 +138,7 @@ class CultivoService(ABC):
 
 # ================================================================================
 # ARCHIVO 4/8: cultivo_service_registry.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\servicios\cultivos\cultivo_service_registry.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/servicios/cultivos/cultivo_service_registry.py
 # ================================================================================
 
 """
@@ -300,7 +300,7 @@ class CultivoServiceRegistry:
 
 # ================================================================================
 # ARCHIVO 5/8: lechuga_service.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\servicios\cultivos\lechuga_service.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/servicios/cultivos/lechuga_service.py
 # ================================================================================
 
 """
@@ -347,7 +347,7 @@ class LechugaService(CultivoService):
 
 # ================================================================================
 # ARCHIVO 6/8: olivo_service.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\servicios\cultivos\olivo_service.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/servicios/cultivos/olivo_service.py
 # ================================================================================
 
 """
@@ -411,7 +411,7 @@ class OlivoService(ArbolService):
 
 # ================================================================================
 # ARCHIVO 7/8: pino_service.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\servicios\cultivos\pino_service.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/servicios/cultivos/pino_service.py
 # ================================================================================
 
 """
@@ -475,7 +475,7 @@ class PinoService(ArbolService):
 
 # ================================================================================
 # ARCHIVO 8/8: zanahoria_service.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\servicios\cultivos\zanahoria_service.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/servicios/cultivos/zanahoria_service.py
 # ================================================================================
 
 """

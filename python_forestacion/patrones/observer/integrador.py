@@ -1,20 +1,20 @@
 """
 Archivo integrador generado automaticamente
-Directorio: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\patrones\observer
-Fecha: 2025-10-21 18:36:35
+Directorio: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/patrones/observer
+Fecha: 2025-10-22 09:43:42
 Total de archivos integrados: 3
 """
 
 # ================================================================================
 # ARCHIVO 1/3: __init__.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\patrones\observer\__init__.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/patrones/observer/__init__.py
 # ================================================================================
 
 
 
 # ================================================================================
 # ARCHIVO 2/3: observable.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\patrones\observer\observable.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/patrones/observer/observable.py
 # ================================================================================
 
 """
@@ -81,7 +81,7 @@ class Observable(Generic[T], ABC):
 
 # ================================================================================
 # ARCHIVO 3/3: observer.py
-# Ruta: C:\Josias\UM\3ro\DisenoSistemas\Parcial\python_forestacion\patrones\observer\observer.py
+# Ruta: /home/josiasvilches/cursada/disenosistemas/python-forestal/python_forestacion/patrones/observer/observer.py
 # ================================================================================
 
 """

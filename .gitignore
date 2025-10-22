@@ -25,6 +25,11 @@ temp/
 Thumbs.db
 .coverage
 verificarproec.py
+config.json
+evaluador.py
+resultado.md
+resultado.json
+buscar_paquete.py
 
 # Editores / IDE
 .idea/
